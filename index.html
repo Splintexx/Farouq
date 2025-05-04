@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe | Cybersecurity Professional</title>
+    <style>
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #64ffda;
+            --accent-color: #00b4d8;
+            --light-color: #ccd6f6;
+            --dark-color: #020c1b;
+            --text-color: #8892b0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to bottom, rgba(2, 12, 27, 0.8), rgba(2, 12, 27, 0.95)),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230a192f' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E"),
+                radial-gradient(circle, rgba(0, 180, 216, 0.1) 0%, rgba(10, 25, 47, 0) 70%);
+            z-index: -1;
+        }
+        
+        /* Binary code background animation */
+        @keyframes binary {
+            0% {opacity: 0.05;}
+            50% {opacity: 0.1;}
+            100% {opacity: 0.05;}
+        }
+        
+        body::after {
+            content: "01001000 01100001 01100011 01101011 01100101 01110010 00100000 01000101 01110100 01101000 01101001 01100011 01110011 00100000 01010011 01100101 01100011 01110101 01110010 01101001 01110100 01111001 00100000 01000011 01111001 01100010 01100101 01110010";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            opacity: 0.05;
+            z-index: -1;
+            white-space: break-spaces;
+            word-break: break-all;
+            letter-spacing: 1px;
+            animation: binary 5s infinite;
+            pointer-events: none;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            background-image: linear-gradient(to bottom, rgba(10, 25, 47, 0.8), var(--primary-color)), 
+                              url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M81.28 88H68.413l19.298 19.298L81.28 88zm2.107 0h13.226L90 107.838 83.387 88zm15.334 0h12.866l-19.298 19.298L98.72 88zm-32.927-2.207L73.586 78h32.827l.5.5 7.294 7.293L115.414 87l-24.707 24.707-.707.707L64.586 87l1.207-1.207zm2.62.207L74 80.414 79.586 86H68.414zm16 0L90 80.414 95.586 86H84.414zm16 0L106 80.414 111.586 86h-11.172zm-8-6h11.173L98 85.586 92.414 80zM82 85.586L87.586 80H76.414L82 85.586zM17.414 0L.707 16.707 0 17.414V0h17.414zM4.28 0L0 12.838V0h4.28zm10.306 0L2.288 12.298 6.388 0h8.198zM180 17.414L162.586 0H180v17.414zM165.414 0l12.298 12.298L173.612 0h-8.198zM180 12.838L175.72 0H180v12.838zM0 163h16.413l.5.5 7.294 7.293L25.414 172l-8 8H0v-17zm0 10h6.613l-2.334 7H0v-7zm14.586 7l7-7H8.72l-2.333 7h8.2zM0 165.414L5.586 171H0v-5.586zM10.414 171L16 165.414 21.586 171H10.414zm-8-6h11.172L8 170.586 2.414 165zM180 163h-16.413l-7.794 7.793-1.207 1.207 8 8H180v-17zm-14.586 17l-7-7h12.865l2.333 7h-8.2zM180 173h-6.613l2.334 7H180v-7zm-21.586-2l5.586-5.586 5.586 5.586h-11.172zM180 165.414L174.414 171H180v-5.586zm-8 5.172l5.586-5.586h-11.172l5.586 5.586zM152.933 25.653l1.414 1.414-33.94 33.942-1.416-1.416 33.943-33.94zm-30.513 0l33.944 33.94-1.416 1.416-33.94-33.943 1.41-1.413z' fill='%2364ffda' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Digital circuit lines */
+        .header-content::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cpath fill='none' stroke='%2364ffda' stroke-width='1.5' stroke-opacity='0.2' d='M20,30 L120,30 L120,60 L180,60 L180,30 L280,30 M280,130 L280,30 M120,130 L120,60 M180,130 L180,60 M20,130 L20,30 M20,130 L70,130 L70,180 L120,180 M120,130 L120,180 M180,130 L180,180 M180,180 L230,180 L230,240 M120,180 L120,240 M120,240 L60,240 L60,270 M230,240 L230,270 M60,270 L230,270'/%3E%3C/svg%3E");
+            opacity: 0.2;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary-color);
+            margin-bottom: 20px;
+            background-color: var(--dark-color);
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+            position: relative;
+        }
+        
+        .profile-img::after {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            border-radius: 50%;
+            border: 1px solid var(--secondary-color);
+            opacity: 0.4;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.05); opacity: 0.2; }
+            100% { transform: scale(1); opacity: 0.4; }
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+        
+        .name::before {
+            content: "<";
+            color: var(--secondary-color);
+            opacity: 0.6;
+            margin-right: 10px;
+            font-weight: normal;
+        }
+        
+        .name::after {
+            content: "/>";
+            color: var(--secondary-color);
+            opacity: 0.6;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: rgba(2, 12, 27, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+            margin: 0 5px;
+        }
+        
+        .nav-links li::before {
+            content: "//";
+            color: var(--secondary-color);
+            opacity: 0.5;
+            font-size: 0.7rem;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+        
+        .nav-links li:hover::before {
+            opacity: 1;
+        }
+        
+        .nav-links li a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--light-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links li a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .nav-links li a::after {
+            content: "";
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            width: 0;
+            height: 1px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links li a:hover::after {
+            width: calc(100% - 40px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        section:nth-child(odd) {
+            background-color: rgba(10, 25, 47, 0.7);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2rem;
+            color: var(--light-color);
+            position: relative;
+            padding-bottom: 15px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .section-title::before {
+            content: '{ ';
+            color: var(--secondary-color);
+            font-weight: normal;
+        }
+        
+        .section-title::after {
+            content: ' }';
+            color: var(--secondary-color);
+            font-weight: normal;
+        }
+        
+        .section-title span {
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 15px auto 0;
+            position: relative;
+        }
+        
+        .section-title span::before,
+        .section-title span::after {
+            content: "";
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            top: -2px;
+        }
+        
+        .section-title span::before {
+            left: -5px;
+        }
+        
+        .section-title span::after {
+            right: -5px;
+        }
+        
+        /* About section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .about-text h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Experience section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .timeline-content .date {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content .ola {
+            color: black;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Projects section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd; /* Placeholder */
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .project-tag {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            padding: 3px 10px;
+            margin: 2px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        /* Contact section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            margin-right: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .cv-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .cv-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 22px;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <img src="/image.jpg" alt="Profile Image" class="profile-img">
+            <h1 class="name">Faruk Ismail</h1>
+            <p class="title">Cybersecurity Professional</p>
+            <p class="tagline" style="color: var(--text-color); margin-bottom: 25px; max-width: 600px; font-style: italic;">
+                "Protecting digital frontiers and securing the future through ethical hacking and proactive defense."
+            </p>
+            <div class="header-buttons">
+                <a href="#contact" class="cv-btn" style="display: inline-block; margin-right: 15px;">Download CV</a>
+                <a href="#projects" class="ghost-btn" style="display: inline-block; padding: 10px 25px; border: 2px solid var(--secondary-color); color: var(--secondary-color); text-decoration: none; border-radius: 5px; transition: all 0.3s ease;">View Projects</a>
+            </div>
+            
+            <!-- Animated Security Elements -->
+            <div class="security-elements" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; overflow: hidden;">
+                <div class="lock" style="position: absolute; top: 30%; left: 10%; font-size: 24px; color: var(--secondary-color); opacity: 0.2;">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="shield" style="position: absolute; top: 20%; right: 15%; font-size: 30px; color: var(--secondary-color); opacity: 0.15;">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="code" style="position: absolute; bottom: 25%; left: 20%; font-size: 20px; color: var(--secondary-color); opacity: 0.1;">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="fingerprint" style="position: absolute; bottom: 15%; right: 20%; font-size: 28px; color: var(--secondary-color); opacity: 0.15;">
+                    <i class="fas fa-fingerprint"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about">[01] About</a></li>
+                <li><a href="#experience">[02] Experience</a></li>
+                <li><a href="#certifications">[03] Certifications</a></li>
+                <li><a href="#projects">[04] Projects</a></li>
+                <li><a href="#contact">[05] Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me<span></span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px; font-family: 'Courier New', monospace;">&gt; who_am_i.sh</h3>
+                    <p style="color: var(--text-color); position: relative; padding-left: 20px; border-left: 2px solid rgba(100, 255, 218, 0.3);">I am a dedicated cybersecurity professional with over 2 years of experience in identifying vulnerabilities, implementing security solutions, and protecting organizational assets from cyber threats. My expertise spans across network security, penetration testing, security auditing, and incident response.</p>
+                    <p style="color: var(--text-color); position: relative; padding-left: 20px; border-left: 2px solid rgba(100, 255, 218, 0.3); margin-top: 15px;">My approach combines technical expertise with strategic thinking to create comprehensive security frameworks that not only address current threats but anticipate future vulnerabilities.</p>
+                    
+                    <!-- Terminal-styled element -->
+                    <div style="margin-top: 30px; background-color: rgba(2, 12, 27, 0.8); border: 1px solid rgba(100, 255, 218, 0.3); border-radius: 5px; padding: 15px; font-family: 'Courier New', monospace;">
+                        <div style="color: var(--secondary-color); margin-bottom: 10px;">$ cat mission.txt</div>
+                        <div style="color: var(--light-color); line-height: 1.6;">
+                            To protect digital assets and infrastructure through comprehensive security strategies, 
+                            ethical hacking, and continuous monitoring. Staying ahead of emerging threats through 
+                            ongoing research and education.
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px; font-family: 'Courier New', monospace;">&gt; skills --list</h3>
+                    <div class="skills" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <span class="skill-tag" style="background-color: rgba(100, 255, 218, 0.1); color: var(--secondary-color); border: 1px solid var(--secondary-color); padding: 8px 15px; border-radius: 4px; font-family: 'Courier New', monospace; transition: all 0.3s ease;">Network Security</span>
+                        <span class="skill-tag" style="background-color: rgba(100, 255, 218, 0.1); color: var(--secondary-
+    
+    <!-- Experience Section -->
+    <section id="experience" style="background-color: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Senior Security Analyst</h3>
+                        <p class="date">2025 - Present | SecureVault Solutions</p>
+                        <p class='ola'>Leading a team of security analysts to design and implement a security system that mitigate security risks across digital communications systems. Implemented advanced hashing programs that enhanced secure communication.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Consultant</h3>
+                        <p class="date">2024-2024 | Neocloud Technologies</p>
+                        <p class='ola'>Provided comprehensive security assessments and recommendations for clients across various industries. Conducted penetration testing and vulnerability assessments for 50+ organizations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Network Security Engineer</h3>
+                        <p class="date">2023 - 2024 | Global Network Solutions</p>
+                        <p class='ola'>Designed and implemented secure network architectures for enterprise clients. Managed firewall configurations, IDS/IPS deployments, and network monitoring solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Certified Information Systems Security Professional (CISSP)</h3>
+                        <p>Issued by ISC² | 2025</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Certified Ethical Hacker (CEH)</h3>
+                        <p>Issued by EC-Council | 2023</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Offensive Security Certified Professional (OSCP)</h3>
+                        <p>Issued by Offensive Security | 2023</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>CompTIA Security+</h3>
+                        <p>Issued by CompTIA | 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" style="background-color: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                     
+                    <div class="project-info">
+                        <h3>Enterprise Security Architecture Redesign</h3>
+                        <p>Completely redesigned the security architecture for a Fortune 500 company, implementing zero-trust principles and reducing security incidents by 75%.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Zero Trust</span>
+                            <span class="project-tag">Architecture</span>
+                            <span class="project-tag">Enterprise</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Secure Systems with SecureVault</h3>
+                        <p>Led a team of professionals to create and implement a secure hashing program that enables the complete security of information and digital signatures with fernet</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Non-repudiation</span>
+                            <span class="project-tag">Zero zero-trust</span>
+                            <span class="project-tag">Compliance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Security Incident Response Program</h3>
+                        <p>Developed and implemented a comprehensive incident response program for a healthcare organization, ensuring HIPAA compliance and rapid threat mitigation.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Incident Response</span>
+                            <span class="project-tag">Healthcare</span>
+                            <span class="project-tag">HIPAA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Information</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> farukismail2019@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +234 902 8668 404</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Abuja, NG</p>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/faruq-ismail-6328161a1/" class="social-icon" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://x.com/___farouqq/" class="social-icon" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://github.com/splintexx/" class="social-icon" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://medium.com/" class="social-icon" target="_blank">
+                            <i class="fab fa-medium-m"></i>
+                        </a>
+                    </div>
+                    
+                    <a href="farouq-cv.pdf" download class="cv-btn" style="margin-top: 30px;">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+                <div class="contact-form">
+                    <!-- This is a simple contact form. You would need server-side processing to make it functional -->
+                    <form>
+                        <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+                        <textarea placeholder="Your Message" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; height: 150px;"></textarea>
+                        <button type="submit" style="padding: 12px 30px; background-color: var(--secondary-color); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Farouq Ismail - Cybersecurity Professional</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
